@@ -106,10 +106,15 @@ class MessageMixin:
         Returns:
             The path (String) and context (dict) to render the "Complete" message template
         """
+
+        # uuuuv
+        return 'openassessmentblock/empty.html', {}
+
         context = {
             "waiting": self.get_waiting_details(status_details),
         }
 
+        
         return 'openassessmentblock/message/oa_message_complete.html', context
 
     def render_message_closed(self, status_info):

@@ -68,9 +68,12 @@ class GradeMixin:
                     context['is_waiting_staff'] = "is--waiting--staff"
                 context['score_explanation'] = self._get_score_explanation(workflow)
 
-                path = 'openassessmentblock/grade/oa_grade_waiting.html'
+                # uuuuv
+                # path = 'openassessmentblock/grade/oa_grade_waiting.html'
+                path = 'openassessmentblock/empty.html'
             elif status is None:
-                path = 'openassessmentblock/grade/oa_grade_not_started.html'
+                # path = 'openassessmentblock/grade/oa_grade_not_started.html'
+                path = 'openassessmentblock/empty.html' # uuuuv
             else:  # status is 'self' or 'peer', which implies that the workflow is incomplete
                 path, context = self.render_grade_incomplete(workflow)
         except (sub_api.SubmissionError, PeerAssessmentError, SelfAssessmentError):

@@ -22,6 +22,13 @@ def staff_path_and_context(api_data):
     """
     Retrieve the correct template path and template context for the handler to render.
     """
+
+    # uuuuv
+    context = staff_context(api_data)
+    if context.get("is_waiting") == True:
+        return "openassessmentblock/empty.html", {}
+
+    return "openassessmentblock/staff/oa_staff_grade.html", context
     return "openassessmentblock/staff/oa_staff_grade.html", staff_context(api_data)
 
 
@@ -77,6 +84,7 @@ def staff_context(api_data):
             ),
             "step_classes": "is--showing",
             "button_active": "aria-expanded=true",
+            "is_waiting": True # uuuuv
         }
     elif not step_data.has_status:
         context = not_available_context

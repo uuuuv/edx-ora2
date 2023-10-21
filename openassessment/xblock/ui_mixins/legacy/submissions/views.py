@@ -56,8 +56,10 @@ def get_submission_path(submission_info):
         "unavailable": "oa_response_unavailable",
         "team_already_submitted": "oa_response_team_already_submitted",
         "cancelled": "oa_response_cancelled",
-        "graded": "oa_response_graded",
-        "submitted": "oa_response_submitted",
+        "graded": "oa_response_resubmit", # uuuuv
+        # "graded": "oa_response_graded",
+        "submitted": "oa_response_inreview", # uuuuv
+        # "submitted": "oa_response_submitted",
     }
     full_paths = {k: f"{template_dir}/{path}.html" for (k, path) in submission_template_paths.items()}
 
