@@ -1229,3 +1229,46 @@ border-radius: ($baseline-v/10);
   padding: 0 !important;
   margin: 0 !important;
 }
+
+// override confirm modal style
+.ui-widget-overlay.ui-front {
+  background-image: none !important;
+  background-color: #fff !important;
+  opacity: .5;
+}
+
+
+.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front.ora-confirmation-alert {
+  background: #fff !important;
+  border-radius: 4px !important;
+}
+
+.ui-dialog-titlebar.ui-widget-header {
+  border: none !important;
+}
+
+.step--response__dialog-confirm.ui-dialog-content.ui-widget-content {
+  border: none !important;
+}
+
+.ui-dialog-buttonpane.ui-widget-content {
+  border: none !important;
+}
+
+.ui-dialog-buttonpane.ui-widget-content {
+  border: none !important;
+}
+
+.ui-dialog-buttonpane.ui-widget-content .ui-button-text,
+.ui-dialog-buttonpane.ui-widget-content .ui-button-text:hover,
+.ui-dialog-buttonpane.ui-widget-content .ui-button-text:active,
+.ui-dialog-buttonpane.ui-widget-content .ui-button-text:focus-visible {
+  border-radius: 4px !important;
+  color: rgb(32, 21, 255) !important;
+  font-weight: 700 !important;
+  border: 1px solid rgb(32, 21, 255) !important;
+  background: #fff !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
