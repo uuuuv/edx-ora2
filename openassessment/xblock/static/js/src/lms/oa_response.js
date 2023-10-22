@@ -136,7 +136,6 @@ export class ResponseView {
       (eventObject) => {
         // Override default form submission
         // eventObject.preventDefault();
-        console.log("Click submnit button event")
         view.handleSubmitClicked(resubmit === "true");
       },
     );
@@ -513,8 +512,6 @@ export class ResponseView {
     // Immediately disable the submit button to prevent multiple submission
     this.submitEnabled(false);
 
-    console.log("HANDLESUBMITCLICKED:::::", isResubmit);
-
     const view = this;
     const title = gettext('Confirm Submit Response');
     // Keep this on one big line to avoid gettext bug: http://stackoverflow.com/a/24579117
@@ -525,12 +522,10 @@ export class ResponseView {
       msg,
       () => {
         if (isResubmit) {
-          console.log("IS RESUBMIT");
           view.resetStudentAttemps().then(() => {
-            console.log("RESET STUDENT ATTEMPT SUCCESS");
             view.submit();
           }).catch((error) => {
-            console.log("FAIL TO RESET ATTEMPT", error)
+            console.log("Failed to reset student attempts", error)
           })
         } else {
           view.submit();
@@ -544,8 +539,6 @@ export class ResponseView {
    Send a response submission to the server and update the view.
    * */
   submit() {
-    console.log("IS THERE A RACE????????????")
-    // uuuuv upload files here
     $('.submission__answer__display__file', this.element).removeClass('is--hidden');
     const textResonse = $("#submission-details-textarea", this.element).val() || "No submission details.";
 
@@ -623,14 +616,11 @@ export class ResponseView {
 
    */
   prepareUpload(files, uploadType, descriptions) {
-    console.log("PREPARE UPLOAD FILE", this.getSavedFileCount(false))
     this.files = null;
     this.filesType = uploadType;
     this.filesUploaded = false;
 
     let errorCheckerTriggered = false;
-
-    console.log("FROM PREPAREUPLOAD:::::", files)
 
     for (let i = 0; i < files.length; i++) {
       if (files[i].size > this.MAX_FILE_SIZE) {
@@ -713,7 +703,6 @@ export class ResponseView {
   updateFilesDescriptionsFields(files, descriptions, uploadType) {
     const FILE_DESCRIPTION = 'File Description';
 
-    console.log("update file desc");
     const filesDescriptions = $(this.element).find('.files__descriptions').first();
     let mainDiv = null;
     let divLabel = null;
@@ -920,12 +909,7 @@ export class ResponseView {
 
     promise = view.saveFilesDescriptions();
 
-    console.log("FROM UPLOADFILES:::::", view.files);
-
     view.fileCountBeforeUpload = view.getSavedFileCount(true);
-
-    console.log("FROM UPLOADFILES::::: FILECOUTBEFOREUPLOAD", view.fileCountBeforeUpload);
-
 
     $.each(view.files, (index, file) => {
       promise = promise.then(() => view.fileUpload(
@@ -960,13 +944,11 @@ export class ResponseView {
       (url) => {
         view.fileUploader.upload(url, file)
           .done(() => {
-            console.log("FROM FILEUPLOAD::::: FILENUM", filenum);
             view.fileUrl(filenum);
 
 
             view.baseView.toggleActionError('upload', null);
             if (finalUpload) {
-              console.log("FROM FILEUPLOAD::::: FINAUPLOAD");
               sel.find('input[type=file]').val('');
               view.filesUploaded = true;
             }
@@ -979,7 +961,6 @@ export class ResponseView {
     Set the file URL, or retrieve it.
     * */
   fileUrl(filenum) {
-    console.log("FROM fileUrl::::: FILENUM", filenum);
     const view = this;
     const sel = $('.step--response', this.element);
     view.server.getDownloadUrl(filenum).done((url) => {
@@ -1049,7 +1030,6 @@ export class ResponseView {
 
   // uuuuv
   resetStudentAttemps() {
-    console.log("START RESET STUDENT ATTEMPT....")
     const { baseView } = this;
     const usageID = baseView.getUsageID();
 
@@ -1076,7 +1056,7 @@ export class ResponseView {
           }
         });
       }).fail((err) => {
-        console.log("FAILED TO GET USERNAME:::", err)
+        console.log("Failed to get username: ", err)
       })
 
     })
