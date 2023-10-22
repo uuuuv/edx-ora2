@@ -1054,12 +1054,11 @@ export class ResponseView {
     const usageID = baseView.getUsageID();
 
     return new Promise((res, _) => {
-      const lmsHost = "http://localhost:18000"
 
       const xBlockId = usageID; // block-v1:edX+E2E-101+course+type@openassessment+block@5b9e28f81af5476f869570ae69c50c08
       // const xBlockId = $(this).data('xblockid'); // block-v1:edX+E2E-101+course+type@openassessment+block@5b9e28f81af5476f869570ae69c50c08
       const courseUrlName = xBlockId.match(/^block-v1:(.+)\+type@openassessment\+block@.+$/)[1];
-      const resetApi = `${lmsHost}/courses/course-v1:${courseUrlName}/instructor/api/reset_student_attempts`;
+      const resetApi = `/courses/course-v1:${courseUrlName}/instructor/api/reset_student_attempts`;
 
       this.server.getUsername().done(username => {
         const formData = {
