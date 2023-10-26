@@ -521,11 +521,15 @@ export class ResponseView {
       title,
       msg,
       () => {
+        $("#submitting-modal", view.element).css("display", "flex");
         if (isResubmit) {
           view.resetStudentAttemps().then(() => {
             view.submit();
           }).catch((error) => {
-            console.log("Failed to reset student attempts", error)
+            console.log("Failed to reset student attempts", error);
+            $("#submitting-modal", view.element).css("display", "none");
+            $("#submitting-error-message", view.element).text(error.message);
+            $("#submitting-error-message", view.element).css("display", "block");
           })
         } else {
           view.submit();
@@ -542,6 +546,7 @@ export class ResponseView {
     $('.submission__answer__display__file', this.element).removeClass('is--hidden');
     const textResonse = $("#submission-details-textarea", this.element).val() || "No submission details.";
 
+    const view = this;
     if (this.hasAllUploadFiles()) {
       this.uploadFiles().then(() => {
         // const submission = this.response();
@@ -556,13 +561,16 @@ export class ResponseView {
             // Otherwise, the user will be stuck on the current step with no way to continue.
             if (errCode === 'ENOMULTI') { this.moveToNextStep(); } else {
               // If there is an error message, display it
-              if (errMsg) { this.baseView.toggleActionError('submit', errMsg); }
+              // if (errMsg) { this.baseView.toggleActionError('submit', errMsg); }
+              $("#submitting-error-message", view.element).text(errMsg);
+              $("#submitting-error-message", view.element).css("display", "block");
 
               // Re-enable the submit button so the user can retry
               this.submitEnabled(true);
+              $("#submitting-modal", view.element).css("display", "none");
             }
           });
-      });
+      })
     }
 
     // const submission = this.response();
@@ -616,6 +624,8 @@ export class ResponseView {
 
    */
   prepareUpload(files, uploadType, descriptions) {
+    $("#submitting-error-message", this.element).text("");
+
     this.files = null;
     this.filesType = uploadType;
     this.filesUploaded = false;
@@ -623,32 +633,39 @@ export class ResponseView {
     let errorCheckerTriggered = false;
 
     for (let i = 0; i < files.length; i++) {
-      if (files[i].size > this.MAX_FILE_SIZE) {
-        this.baseView.toggleActionError(
-          'upload',
-          gettext(
-            'Individual file size must be {max_files_mb}MB or less.',
-          ).replace(
-            '{max_files_mb}',
-            this.MAX_FILES_MB,
-          ),
-        );
+      // if (files[i].size > this.MAX_FILE_SIZE) {
+      //   this.baseView.toggleActionError(
+      //     'upload',
+      //     gettext(
+      //       'Individual file size must be {max_files_mb}MB or less.',
+      //     ).replace(
+      //       '{max_files_mb}',
+      //       this.MAX_FILES_MB,
+      //     ),
+      //   );
+      //   errorCheckerTriggered = true;
+      //   break;
+      // }
+
+      const checkResult = this.isUploadSupported(files[i], uploadType);
+      if (typeof checkResult === 'string') {
+        $("#submitting-error-message", this.element).text(gettext(checkResult));
         errorCheckerTriggered = true;
         break;
       }
 
-      if (!this.isUploadSupported(files[i], uploadType)) {
-        this.baseView.toggleActionError(
-          'upload',
-          gettext(
-            'File upload failed: unsupported file type. '
-            + 'Only the supported file types can be uploaded. '
-            + 'If you have questions, please reach out to the course team.',
-          ),
-        );
-        errorCheckerTriggered = true;
-        break;
-      }
+      // if (!this.isUploadSupported(files[i], uploadType)) {
+      //   this.baseView.toggleActionError(
+      //     'upload',
+      //     gettext(
+      //       'File upload failed: unsupported file type. '
+      //       + 'Only the supported file types can be uploaded. '
+      //       + 'If you have questions, please reach out to the course team.',
+      //     ),
+      //   );
+      //   errorCheckerTriggered = true;
+      //   break;
+      // }
     }
 
     if (this.getSavedFileCount(false) + files.length > this.data.MAXIMUM_FILE_UPLOAD_COUNT) {
@@ -671,26 +688,31 @@ export class ResponseView {
 
   isUploadSupported = (file, uploadType) => {
     const ext = file.name.split('.').pop().toLowerCase();
-    const fileType = file.type;
+    // const fileType = file.type;
 
     // Check upload type/extension matches allowed types
-    if (uploadType === 'image'
-      && this.data.ALLOWED_IMAGE_MIME_TYPES.indexOf(fileType) === -1
-    ) {
-      return false;
-    } if (
-      uploadType === 'pdf-and-image'
-      && this.data.ALLOWED_FILE_MIME_TYPES.indexOf(fileType) === -1
-    ) {
-      return false;
-    } if (
-      uploadType === 'custom'
-      && this.data.FILE_TYPE_WHITE_LIST.indexOf(ext) === -1
-    ) {
-      return false;
-    } if (this.data.FILE_EXT_BLACK_LIST.indexOf(ext) !== -1) {
-      return false;
-    }
+    // if (uploadType === 'image'
+    //   && this.data.ALLOWED_IMAGE_MIME_TYPES.indexOf(fileType) === -1
+    // ) {
+    //   return false;
+    // } if (
+    //   uploadType === 'pdf-and-image'
+    //   && this.data.ALLOWED_FILE_MIME_TYPES.indexOf(fileType) === -1
+    // ) {
+    //   return false;
+    // } if (
+    //   uploadType === 'custom'
+    //   && this.data.FILE_TYPE_WHITE_LIST.indexOf(ext) === -1
+    // ) {
+    //   return false;
+    // } if (this.data.FILE_EXT_BLACK_LIST.indexOf(ext) !== -1) {
+    //   return false;
+    // }
+
+    // Chỉ check size và là file zip
+    if (ext !== 'zip') return "Must be .zip file.";
+
+    if (file.size / (1024 * 1024) > 500) return "File is too large."
 
     return true;
   };

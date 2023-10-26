@@ -28,8 +28,9 @@
                         </header>
                     </li>
                 {% endfor %}
+                <div id="initial-loading"><span id="initial-loader"></span></div>
             </ol>
-
+           
             {% if show_staff_area %}
                 <div class="openassessment__staff-area"></div>
             {% endif %}
@@ -38,3 +39,43 @@
     <div class="sr reader-feedback" aria-live="polite"></div>
 </div>
 {% endspaceless %}
+
+<style>
+    .is--loading {
+        display: none;
+    }
+
+    #initial-loading {
+        height: 300px;
+        align-items: center;
+        justify-content: center; 
+        display: none;
+    }
+    
+    .is--loading ~ #initial-loading {
+        display: flex;
+    }
+
+    #initial-loader {
+        width: 40px;
+        height: 40px;
+        border: 5px solid #000;
+        border-bottom-color: transparent;
+        border-radius: 50%;
+        display: inline-block;
+        box-sizing: border-box;
+        animation: rotation 1s linear infinite;
+    }
+    
+    @keyframes rotation {
+
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    } 
+
+</style>

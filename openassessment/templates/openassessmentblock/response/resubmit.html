@@ -80,6 +80,8 @@
 
   </div>
 
+  <p id="submitting-error-message"></p>
+
   <button id="submit-button" class="disabled resubmit-button step--response__submit" data-xblockid="{{xblock_id}}" text_response="{{text_response}}" file_upload_response="{{file_upload_response}}" resubmit="true">
     <strong>Resubmit</strong>
   </button>
@@ -96,6 +98,57 @@
   <p class="dialog-text"></p>
 </div>
 
+<div style="display: none;" id="submitting-modal"><span id="submitting-loader"></span></div>
+
+<style>
+  #submitting-error-message {
+    background-color: #bb1212;
+    padding: 10px;
+    color: #fff;
+    font-size: 16px;
+    margin: 20px 0;
+    display: none;
+  }
+</style>
+
+<style>
+  #submitting-modal {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; 
+    z-index: 100;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    opacity: .7;
+  }
+
+  #submitting-loader {
+      width: 40px;
+      height: 40px;
+      border: 5px solid #000;
+      border-bottom-color: transparent;
+      border-radius: 50%;
+      display: inline-block;
+      box-sizing: border-box;
+      animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+
+      0% {
+          transform: rotate(0deg);
+      }
+
+      100% {
+          transform: rotate(360deg);
+      }
+  } 
+
+</style>
 
 <style>
   #goback-button {
@@ -187,16 +240,24 @@
       const fileName = file.name;
       const fileType = file.type;
       const fileSize = file.size;
+      const fileExt = file.name.split(".").pop().toLowerCase();
 
       document.getElementById("preview-filename").innerText = fileName;
       document.getElementById("file-upload-preview").style.display = "block";
       document.getElementById("fake-file-upload-input").style.display = "none";
-      document.getElementById("submit-button").classList.remove("disabled");
+
+      if (fileExt !== 'zip'|| fileSize/(1024 * 1024) > 500) {
+        document.getElementById("submitting-error-message").style.display = "block";
+      } else {
+        document.getElementById("submitting-error-message").style.display = "none";
+        
+      }
     }
 
     if (!file) {
+      document.getElementById("submitting-error-message").style.display = "none";
       document.getElementById("preview-filename").innerText = "";
-      document.getElementById("submit-button").classList.add("disabled");
+      
     }
   }
 
@@ -205,5 +266,42 @@
     document.getElementById("file-upload-preview").style.display = "none";
     document.getElementById("fake-file-upload-input").style.display = "flex";
     document.getElementById("submit-button").classList.add("disabled");
+    document.getElementById("submitting-error-message").style.display = "none";
+  }
+
+  const checkboxes = Array.from(document.querySelectorAll("input[type=checkbox]"));
+  const fileInput =  document.querySelector("input[type=file]");
+
+  [...checkboxes, fileInput].forEach(ele => {
+    ele.addEventListener("change", e => {
+      if (isValidToSubmit()) {
+        document.getElementById("submit-button").classList.remove("disabled");
+      } else {
+        document.getElementById("submit-button").classList.add("disabled");
+      }
+    })
+  })
+
+  function isValidToSubmit() {
+    const checkboxes = Array.from(document.querySelectorAll("input[type=checkbox]"));
+    console.log(checkboxes)
+    for (const checkbox of checkboxes) {
+      console.log(checkbox, checkbox.checked);
+      if (!checkbox.checked) return false;
+    }
+
+    const file = document.querySelector("input[type=file]").files[0];
+    console.log(file)
+    if (!file) return false;
+
+    const ext = file.name.split(".").pop().toLowerCase();
+    console.log(ext)
+    if (ext !== 'zip') return false;
+
+    const size = file.size;
+    console.log(size)
+    if (size / (1024 * 1024) > 500) return false;
+
+    return true;
   }
 </script>

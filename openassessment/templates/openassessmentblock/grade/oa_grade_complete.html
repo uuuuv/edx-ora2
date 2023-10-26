@@ -97,6 +97,7 @@
     </li>
 
 {% endspaceless %}
+
 <style>
     #feedback-details-title {
         font-size: 28px;
@@ -155,6 +156,15 @@
 
     .criterion-result-header:hover {
         background-color: #f6f6f6;
+    }
+
+    .criterion-result-header.is--expanded .criterion-header-angle svg {
+      transform: rotate(0);
+      transition: .2s;
+    }
+
+    .criterion-result-header.is--expanded .criterion-header-angle svg {
+      transform: rotate(-180deg);
     }
 
     .criterion-result-header-title {
@@ -285,6 +295,7 @@
         background: #e5e5e5;
     }
   </style>
+
 <script>
     class VanSelect {
         constructor(obj) {
@@ -476,13 +487,13 @@
     const feedbackHeaders = document.querySelectorAll(".criterion-result-header");
     feedbackHeaders.forEach((ele) => {
       ele.addEventListener("click", (e) => {
-        console.log("CLICKKKKKK HEADER")
-        const contentEle = e.currentTarget.nextSibling;
-        console.log("CONTETN ELE::::", contentEle)
+        const header = e.currentTarget;
+        const contentEle = header.nextSibling;
         if (contentEle.style.height == "0px") {
+          header.classList.add("is--expanded")
           contentEle.style.height = `${contentEle.scrollHeight}px`;
-
         } else {
+          header.classList.remove("is--expanded")
           contentEle.style.height = "0px"
         }
       })

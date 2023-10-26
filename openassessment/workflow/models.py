@@ -104,7 +104,7 @@ class AssessmentWorkflow(TimeStampedModel, StatusModel):
     item_id = models.CharField(max_length=255, blank=False, db_index=True)
 
     # uuuuv
-    student_id =  models.CharField(max_length=255, blank=False, default="")
+    # student_id =  models.CharField(max_length=255, blank=False, default="")
 
     class Meta:
         ordering = ["-created"]
@@ -163,7 +163,7 @@ class AssessmentWorkflow(TimeStampedModel, StatusModel):
             status=AssessmentWorkflow.STATUS.waiting,
             course_id=submission_dict['student_item']['course_id'],
             item_id=submission_dict['student_item']['item_id'],
-            student_id=submission_dict['student_item']['student_id']
+            # student_id=submission_dict['student_item']['student_id']
         )
         workflow_steps = [
             AssessmentWorkflowStep.objects.create(
