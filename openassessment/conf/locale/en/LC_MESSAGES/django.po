@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-ora2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 21:24+0000\n"
+"POT-Creation-Date: 2023-10-26 20:24+0000\n"
 "PO-Revision-Date: 2014-06-04 15:41-0400\n"
 "Last-Translator: Muhammad Ayub khan <ayubkhan@edx.org>\n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
@@ -140,6 +140,22 @@ msgstr ""
 
 #: data.py:1316
 msgid "No description provided."
+msgstr ""
+
+#: templates/openassessmentblock/components/submission-state.html:4
+msgid "Submission Date"
+msgstr ""
+
+#: templates/openassessmentblock/components/submission-state.html:12
+msgid "Submission Passed"
+msgstr ""
+
+#: templates/openassessmentblock/components/submission-state.html:21
+msgid "Submission Did Not Pass"
+msgstr ""
+
+#: templates/openassessmentblock/components/submission-state.html:31
+msgid "Submission In Review"
 msgstr ""
 
 #: templates/openassessmentblock/edit/oa_edit.html:28
@@ -714,6 +730,7 @@ msgstr ""
 msgid "points"
 msgstr ""
 
+#: templates/openassessmentblock/grade/oa_assessment_feedback.backup.html:8
 #: templates/openassessmentblock/grade/oa_assessment_feedback.html:8
 #, python-format
 msgid ""
@@ -742,8 +759,8 @@ msgid "More information about %(name)s"
 msgstr ""
 
 #: templates/openassessmentblock/grade/oa_grade_cancelled.html:14
-#: templates/openassessmentblock/grade/oa_grade_complete.html:15
-#: templates/openassessmentblock/grade/oa_grade_complete.html:26
+#: templates/openassessmentblock/grade/oa_grade_complete.backup.html:15
+#: templates/openassessmentblock/grade/oa_grade_complete.backup.html:26
 #: templates/openassessmentblock/grade/oa_grade_incomplete.html:14
 #: templates/openassessmentblock/grade/oa_grade_not_started.html:14
 #: templates/openassessmentblock/grade/oa_grade_waiting.html:14
@@ -763,7 +780,7 @@ msgstr ""
 msgid "Your submission has been cancelled."
 msgstr ""
 
-#: templates/openassessmentblock/grade/oa_grade_complete.html:19
+#: templates/openassessmentblock/grade/oa_grade_complete.backup.html:19
 #, python-format
 msgid ""
 "\n"
@@ -772,21 +789,21 @@ msgid ""
 "                                        "
 msgstr ""
 
-#: templates/openassessmentblock/grade/oa_grade_complete.html:38
-#: templates/openassessmentblock/response/oa_response.html:29
+#: templates/openassessmentblock/grade/oa_grade_complete.backup.html:38
+#: templates/openassessmentblock/response/oa_response copy.html:29
 msgid "Your Response"
 msgstr ""
 
-#: templates/openassessmentblock/grade/oa_grade_complete.html:41
+#: templates/openassessmentblock/grade/oa_grade_complete.backup.html:41
 msgid "Your Upload"
 msgstr ""
 
-#: templates/openassessmentblock/grade/oa_grade_complete.html:46
+#: templates/openassessmentblock/grade/oa_grade_complete.backup.html:46
 msgid "Assessments of Your Response"
 msgstr ""
 
-#: templates/openassessmentblock/grade/oa_grade_complete.html:50
-#: templates/openassessmentblock/grade/oa_grade_complete.html:132
+#: templates/openassessmentblock/grade/oa_grade_complete.backup.html:50
+#: templates/openassessmentblock/grade/oa_grade_complete.backup.html:132
 #: templates/openassessmentblock/grade/oa_grade_incomplete.html:28
 #: templates/openassessmentblock/grade/oa_grade_waiting.html:28
 #: templates/openassessmentblock/message/oa_message_cancelled.html:4
@@ -807,76 +824,102 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
-#: templates/openassessmentblock/grade/oa_grade_complete.html:65
+#: templates/openassessmentblock/grade/oa_grade_complete.backup.html:65
 msgid "Overall Grade"
 msgstr ""
 
-#: templates/openassessmentblock/grade/oa_grade_complete.html:70
+#: templates/openassessmentblock/grade/oa_grade_complete.backup.html:70
 #: templates/openassessmentblock/staff_area/oa_student_info_assessment_detail.html:28
 msgid "Points"
 msgstr ""
 
-#: templates/openassessmentblock/grade/oa_grade_complete.html:96
+#: templates/openassessmentblock/grade/oa_grade_complete.backup.html:96
 msgid "Additional comments on your response"
 msgstr ""
 
-#: templates/openassessmentblock/grade/oa_grade_complete.html:117
+#: templates/openassessmentblock/grade/oa_grade_complete.backup.html:117
 msgid "Provide feedback on peer assessments"
 msgstr ""
 
-#: templates/openassessmentblock/grade/oa_grade_complete.html:126
+#: templates/openassessmentblock/grade/oa_grade_complete.backup.html:126
 msgid "Submitting Feedback"
 msgstr ""
 
-#: templates/openassessmentblock/grade/oa_grade_complete.html:134
+#: templates/openassessmentblock/grade/oa_grade_complete.backup.html:134
 msgid ""
 "Your feedback has been submitted. Course staff will be able to see this "
 "feedback when they review course records."
 msgstr ""
 
-#: templates/openassessmentblock/grade/oa_grade_complete.html:140
+#: templates/openassessmentblock/grade/oa_grade_complete.backup.html:140
 msgid ""
 "Course staff will be able to see any feedback that you provide here when "
 "they review course records."
 msgstr ""
 
-#: templates/openassessmentblock/grade/oa_grade_complete.html:146
+#: templates/openassessmentblock/grade/oa_grade_complete.backup.html:146
 msgid ""
 "Select the statements below that best reflect your experience with peer "
 "assessments."
 msgstr ""
 
-#: templates/openassessmentblock/grade/oa_grade_complete.html:155
+#: templates/openassessmentblock/grade/oa_grade_complete.backup.html:155
 msgid "These assessments were useful."
 msgstr ""
 
-#: templates/openassessmentblock/grade/oa_grade_complete.html:164
+#: templates/openassessmentblock/grade/oa_grade_complete.backup.html:164
 msgid "These assessments were not useful."
 msgstr ""
 
-#: templates/openassessmentblock/grade/oa_grade_complete.html:173
+#: templates/openassessmentblock/grade/oa_grade_complete.backup.html:173
 msgid "I disagree with one or more of the peer assessments of my response."
 msgstr ""
 
-#: templates/openassessmentblock/grade/oa_grade_complete.html:182
+#: templates/openassessmentblock/grade/oa_grade_complete.backup.html:182
 msgid "Some comments I received were inappropriate."
 msgstr ""
 
-#: templates/openassessmentblock/grade/oa_grade_complete.html:187
+#: templates/openassessmentblock/grade/oa_grade_complete.backup.html:187
 msgid ""
 "Provide feedback on the grade or comments that you received from your peers."
 msgstr ""
 
-#: templates/openassessmentblock/grade/oa_grade_complete.html:190
+#: templates/openassessmentblock/grade/oa_grade_complete.backup.html:190
 msgid "I feel the feedback I received was..."
 msgstr ""
 
-#: templates/openassessmentblock/grade/oa_grade_complete.html:200
+#: templates/openassessmentblock/grade/oa_grade_complete.backup.html:200
 msgid "We could not submit your feedback"
 msgstr ""
 
-#: templates/openassessmentblock/grade/oa_grade_complete.html:206
+#: templates/openassessmentblock/grade/oa_grade_complete.backup.html:206
 msgid "Submit feedback on peer assessments"
+msgstr ""
+
+#: templates/openassessmentblock/grade/oa_grade_complete.html:9
+#: templates/openassessmentblock/response/oa_response_inreview.html:3
+msgid "Submission Results"
+msgstr ""
+
+#: templates/openassessmentblock/grade/oa_grade_complete.html:19
+msgid "Feedback Details"
+msgstr ""
+
+#: templates/openassessmentblock/grade/oa_grade_complete.html:23
+msgid "Reviewer Note"
+msgstr ""
+
+#: templates/openassessmentblock/grade/oa_grade_complete.html:84
+#: templates/openassessmentblock/response/resubmit.html:86
+msgid "Resubmit"
+msgstr ""
+
+#: templates/openassessmentblock/grade/oa_grade_complete.html:91
+msgid "Submission History"
+msgstr ""
+
+#: templates/openassessmentblock/grade/oa_grade_complete.html:92
+msgid "Choose a different project submission"
 msgstr ""
 
 #: templates/openassessmentblock/grade/oa_grade_incomplete.html:16
@@ -1112,13 +1155,14 @@ msgstr ""
 msgid "The instructions for this step could not be loaded."
 msgstr ""
 
-#: templates/openassessmentblock/oa_base.html:15
+#: templates/openassessmentblock/oa_base.backup.html:15
 msgid ""
 "This assignment has several steps. In the first step, you'll provide a "
 "response to the prompt. The other steps appear below the Your Response field."
 msgstr ""
 
-#: templates/openassessmentblock/oa_base.html:36
+#: templates/openassessmentblock/oa_base.backup.html:36
+#: templates/openassessmentblock/oa_base.html:25
 msgid "Loading"
 msgstr ""
 
@@ -1147,7 +1191,7 @@ msgid "Files that were uploaded by your teammates:"
 msgstr ""
 
 #: templates/openassessmentblock/oa_team_uploaded_files.html:28
-#: templates/openassessmentblock/oa_uploaded_file.html:34
+#: templates/openassessmentblock/oa_uploaded_file.backup.html:33
 msgid "View the files associated with this submission:"
 msgstr ""
 
@@ -1155,15 +1199,20 @@ msgstr ""
 msgid "Uploaded by"
 msgstr ""
 
-#: templates/openassessmentblock/oa_uploaded_file.html:16
+#: templates/openassessmentblock/oa_uploaded_file.backup.html:15
 msgid "Files that were uploaded by you:"
 msgstr ""
 
-#: templates/openassessmentblock/oa_uploaded_file.html:48
+#: templates/openassessmentblock/oa_uploaded_file.backup.html:47
+#: templates/openassessmentblock/oa_uploaded_file.html:30
 msgid ""
 "Caution: These files were uploaded by another course learner and have not "
 "been verified, screened, approved, reviewed, or endorsed by the site "
 "administrator. If you access the files, you do so at your own risk.)"
+msgstr ""
+
+#: templates/openassessmentblock/oa_uploaded_file.html:18
+msgid "Download Submission"
 msgstr ""
 
 #: templates/openassessmentblock/peer/oa_peer_assessment.html:26
@@ -1305,12 +1354,12 @@ msgid ""
 "your response."
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:27
+#: templates/openassessmentblock/response/oa_response copy.html:27
 msgid "Your Team's Response"
 msgstr ""
 
 #. Translators: This string displays a date to the user, then tells them the time until that date.  Example: "available August 13th, 2014 (in 5 days and 45 minutes)"
-#: templates/openassessmentblock/response/oa_response.html:39
+#: templates/openassessmentblock/response/oa_response copy.html:39
 #, python-format, python-brace-format
 msgid ""
 "\n"
@@ -1322,7 +1371,7 @@ msgid ""
 msgstr ""
 
 #. Translators: This string displays a date to the user, then tells them the time until that date.  Example: "due August 13th, 2014 (in 5 days and 45 minutes)"
-#: templates/openassessmentblock/response/oa_response.html:46
+#: templates/openassessmentblock/response/oa_response copy.html:46
 #, python-format, python-brace-format
 msgid ""
 "\n"
@@ -1333,16 +1382,16 @@ msgid ""
 "            "
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:54
+#: templates/openassessmentblock/response/oa_response copy.html:54
 #: templates/openassessmentblock/self/oa_self_assessment.html:46
 msgid "In Progress"
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:66
+#: templates/openassessmentblock/response/oa_response copy.html:66
 msgid "Enter your team's response to the prompt."
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:68
+#: templates/openassessmentblock/response/oa_response copy.html:68
 msgid ""
 "\n"
 "                        Your work will save automatically and you can return "
@@ -1350,7 +1399,7 @@ msgid ""
 "                      "
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:81
+#: templates/openassessmentblock/response/oa_response copy.html:81
 msgid ""
 "\n"
 "                        Your work will save automatically and you can return "
@@ -1358,60 +1407,60 @@ msgid ""
 "                      "
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:86
+#: templates/openassessmentblock/response/oa_response copy.html:86
 msgid ""
 "After you submit a response on behalf of your team, it cannot be edited."
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:89
+#: templates/openassessmentblock/response/oa_response copy.html:89
 msgid "Enter your response to the prompt."
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:92
+#: templates/openassessmentblock/response/oa_response copy.html:92
 msgid ""
 "Your work will save automatically and you can return to complete your "
 "response at any time before the subsection due date "
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:94
+#: templates/openassessmentblock/response/oa_response copy.html:94
 msgid ""
 "Your work will save automatically and you can return to complete your "
 "response at any time before the course ends "
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:96
+#: templates/openassessmentblock/response/oa_response copy.html:96
 msgid ""
 "Your work will save automatically and you can return to complete your "
 "response at any time before the due date "
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:108
+#: templates/openassessmentblock/response/oa_response copy.html:108
 msgid ""
 "Your work will save automatically and you can return to complete your "
 "response at any time."
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:110
+#: templates/openassessmentblock/response/oa_response copy.html:110
 msgid "After you submit your response, you cannot edit it"
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:120
+#: templates/openassessmentblock/response/oa_response copy.html:120
 msgid "What will this assignment be graded on?"
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:134
+#: templates/openassessmentblock/response/oa_response copy.html:134
 msgid "The prompt for this section"
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:148
+#: templates/openassessmentblock/response/oa_response copy.html:148
 msgid "You are on team "
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:150
+#: templates/openassessmentblock/response/oa_response copy.html:150
 msgid "Team Members: "
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:155
+#: templates/openassessmentblock/response/oa_response copy.html:155
 #, python-format
 msgid ""
 "\n"
@@ -1423,25 +1472,25 @@ msgid ""
 "                                          "
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:171
+#: templates/openassessmentblock/response/oa_response copy.html:171
 msgid "Team Response "
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:173
+#: templates/openassessmentblock/response/oa_response copy.html:173
 msgid "Your Response "
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:177
-#: templates/openassessmentblock/response/oa_response.html:247
+#: templates/openassessmentblock/response/oa_response copy.html:177
+#: copy.html:247
 msgid "(Required)"
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:179
-#: templates/openassessmentblock/response/oa_response.html:249
+#: templates/openassessmentblock/response/oa_response copy.html:179
+#: copy.html:249
 msgid "(Optional)"
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:183
+#: templates/openassessmentblock/response/oa_response copy.html:183
 msgid ""
 "\n"
 "                                              Teams should designate one "
@@ -1456,11 +1505,11 @@ msgid ""
 "                                          "
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:197
+#: templates/openassessmentblock/response/oa_response copy.html:197
 msgid "Enter your response to the prompt above."
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:211
+#: templates/openassessmentblock/response/oa_response copy.html:211
 #, python-format
 msgid ""
 "\n"
@@ -1476,19 +1525,19 @@ msgid ""
 "                                  "
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:224
+#: templates/openassessmentblock/response/oa_response copy.html:224
 msgid "We could not save your progress"
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:232
+#: templates/openassessmentblock/response/oa_response copy.html:232
 msgid "Status of Your Response"
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:245
+#: templates/openassessmentblock/response/oa_response copy.html:245
 msgid "File Uploads "
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:253
+#: templates/openassessmentblock/response/oa_response copy.html:253
 msgid ""
 "\n"
 "                                  Upload files and review files uploaded by "
@@ -1498,60 +1547,60 @@ msgid ""
 "                              "
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:261
+#: templates/openassessmentblock/response/oa_response copy.html:261
 msgid "We could not upload files"
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:267
+#: templates/openassessmentblock/response/oa_response copy.html:267
 msgid "We could not delete files"
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:274
+#: templates/openassessmentblock/response/oa_response copy.html:274
 msgid "Select one or more files to upload for this submission."
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:276
+#: templates/openassessmentblock/response/oa_response copy.html:276
 msgid "Select a file to upload for this submission."
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:280
+#: templates/openassessmentblock/response/oa_response copy.html:280
 msgid "Supported file types: "
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:285
+#: templates/openassessmentblock/response/oa_response copy.html:285
 msgid "Upload files"
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:287
+#: templates/openassessmentblock/response/oa_response copy.html:287
 msgid "Upload file"
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:304
+#: templates/openassessmentblock/response/oa_response copy.html:304
 msgid "This is a team submission."
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:306
+#: templates/openassessmentblock/response/oa_response copy.html:306
 msgid ""
 "One team member should submit a response with the team’s shared files and a "
 "text response on behalf of the entire team."
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:308
+#: templates/openassessmentblock/response/oa_response copy.html:308
 msgid ""
 "One team member should submit a response with the team’s shared files on "
 "behalf of the entire team."
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:310
+#: templates/openassessmentblock/response/oa_response copy.html:310
 msgid ""
 "One team member should submit a text response on behalf of the entire team."
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:312
+#: templates/openassessmentblock/response/oa_response copy.html:312
 msgid "One team member should submit on behalf of the entire team."
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:314
+#: templates/openassessmentblock/response/oa_response copy.html:314
 msgid ""
 "\n"
 "                  Learn more about team assignments here: (<a target=\"_blank"
@@ -1560,11 +1609,11 @@ msgid ""
 "                  "
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:322
+#: templates/openassessmentblock/response/oa_response copy.html:322
 msgid "We could not submit your response"
 msgstr ""
 
-#: templates/openassessmentblock/response/oa_response.html:332
+#: templates/openassessmentblock/response/oa_response copy.html:332
 msgid "Submit your response and move to the next step"
 msgstr ""
 
@@ -1682,6 +1731,106 @@ msgid ""
 "                        "
 msgstr ""
 
+#: templates/openassessmentblock/response/resubmit.html:8
+msgid "Go Back"
+msgstr ""
+
+#: templates/openassessmentblock/response/resubmit.html:12
+msgid "Resubmit Assignment"
+msgstr ""
+
+#: templates/openassessmentblock/response/resubmit.html:15
+msgid ""
+"Complete both slide deck templates and check your work against the Rubric."
+msgstr ""
+
+#: templates/openassessmentblock/response/resubmit.html:16
+msgid "Include both template files in a ZIP file called PYUR_Final_Project.zip"
+msgstr ""
+
+#: templates/openassessmentblock/response/resubmit.html:17
+msgid "Upload this ZIP file in your submission."
+msgstr ""
+
+#: templates/openassessmentblock/response/resubmit.html:20
+msgid "Learn the best practices for revising and resubmitting your project. "
+msgstr ""
+
+#: templates/openassessmentblock/response/resubmit.html:20
+msgid "View Video"
+msgstr ""
+
+#: templates/openassessmentblock/response/resubmit.html:26
+#: templates/openassessmentblock/response/submit.html:3
+msgid "Upload Zip File"
+msgstr ""
+
+#: templates/openassessmentblock/response/resubmit.html:27
+#: templates/openassessmentblock/response/submit.html:4
+msgid ""
+"Compress your project file(s) into a single zip file on your computer. 500 "
+"MB limit."
+msgstr ""
+
+#: templates/openassessmentblock/response/resubmit.html:50
+#: templates/openassessmentblock/response/submit.html:27
+msgid "Submission Details (optional)"
+msgstr ""
+
+#: templates/openassessmentblock/response/resubmit.html:51
+#: templates/openassessmentblock/response/submit.html:28
+msgid ""
+"Are there any areas you would like your reviewer to pay particular attention "
+"to?"
+msgstr ""
+
+#: templates/openassessmentblock/response/resubmit.html:58
+#: templates/openassessmentblock/response/submit.html:35
+msgid "You must agree to the following before submitting your project."
+msgstr ""
+
+#: templates/openassessmentblock/response/resubmit.html:63
+#: templates/openassessmentblock/response/submit.html:40
+msgid "I affirm that I have read Funix's definitoin of "
+msgstr ""
+
+#: templates/openassessmentblock/response/resubmit.html:63
+#: templates/openassessmentblock/response/submit.html:40
+msgid "plagiarism"
+msgstr ""
+
+#: templates/openassessmentblock/response/resubmit.html:63
+#: templates/openassessmentblock/response/submit.html:40
+msgid ", and that this submission is my own work."
+msgstr ""
+
+#: templates/openassessmentblock/response/resubmit.html:70
+#: templates/openassessmentblock/response/submit.html:47
+msgid ""
+"I have correctly attributed all content obtained from other sources, such as "
+"websites, books, forums, blogs, GitHub repos, etc."
+msgstr ""
+
+#: templates/openassessmentblock/response/resubmit.html:77
+#: templates/openassessmentblock/response/submit.html:54
+msgid ""
+"I unserstand that Funix actively checks submissions for plagiarism and that "
+"failure to adhere to the "
+msgstr ""
+
+#: templates/openassessmentblock/response/resubmit.html:77
+#: templates/openassessmentblock/response/submit.html:54
+msgid " may result in the cancellation of my enrollment."
+msgstr ""
+
+#: templates/openassessmentblock/response/submit.html:17
+msgid "Delete"
+msgstr ""
+
+#: templates/openassessmentblock/response/submit.html:21
+msgid "Choose File"
+msgstr ""
+
 #: templates/openassessmentblock/self/oa_self_assessment.html:23
 msgid "Assess Your Response"
 msgstr ""
@@ -1721,8 +1870,8 @@ msgid ""
 "will receive a grade of Incomplete."
 msgstr ""
 
-#: templates/openassessmentblock/staff/oa_staff_grade.html:13
-#: xblock/grade_mixin.py:365
+#: templates/openassessmentblock/staff/oa_staff_grade.html:12
+#: xblock/grade_mixin.py:368
 msgid "Staff Grade"
 msgstr ""
 
@@ -2205,85 +2354,85 @@ msgstr ""
 msgid "The Learner Training Step of this assignment could not be loaded."
 msgstr ""
 
-#: xblock/grade_mixin.py:77 xblock/leaderboard_mixin.py:61
+#: xblock/grade_mixin.py:80 xblock/leaderboard_mixin.py:61
 msgid "An unexpected error occurred."
 msgstr ""
 
-#: xblock/grade_mixin.py:179
+#: xblock/grade_mixin.py:182
 msgid "Peer Assessment"
 msgstr ""
 
-#: xblock/grade_mixin.py:181
+#: xblock/grade_mixin.py:184
 msgid "Self Assessment"
 msgstr ""
 
-#: xblock/grade_mixin.py:221
+#: xblock/grade_mixin.py:224
 msgid "Assessment feedback could not be saved."
 msgstr ""
 
-#: xblock/grade_mixin.py:232
+#: xblock/grade_mixin.py:235
 msgid "Feedback saved."
 msgstr ""
 
-#: xblock/grade_mixin.py:366 xblock/grade_mixin.py:512
+#: xblock/grade_mixin.py:369 xblock/grade_mixin.py:515
 msgid "Staff Comments"
 msgstr ""
 
-#: xblock/grade_mixin.py:372
+#: xblock/grade_mixin.py:375
 msgid "Peer Median Grade"
 msgstr ""
 
-#: xblock/grade_mixin.py:377 xblock/grade_mixin.py:519
+#: xblock/grade_mixin.py:380 xblock/grade_mixin.py:522
 #, python-brace-format
 msgid "Peer {peer_index}"
 msgstr ""
 
-#: xblock/grade_mixin.py:378
+#: xblock/grade_mixin.py:381
 msgid "Peer Comments"
 msgstr ""
 
-#: xblock/grade_mixin.py:388
+#: xblock/grade_mixin.py:391
 msgid "Self Assessment Grade"
 msgstr ""
 
-#: xblock/grade_mixin.py:388
+#: xblock/grade_mixin.py:391
 msgid "Your Self Assessment"
 msgstr ""
 
-#: xblock/grade_mixin.py:389 xblock/grade_mixin.py:531
+#: xblock/grade_mixin.py:392 xblock/grade_mixin.py:534
 msgid "Your Comments"
 msgstr ""
 
-#: xblock/grade_mixin.py:485
+#: xblock/grade_mixin.py:488
 msgid "Waiting for peer reviews"
 msgstr ""
 
-#: xblock/grade_mixin.py:524
+#: xblock/grade_mixin.py:527
 msgid "Peer"
 msgstr ""
 
-#: xblock/grade_mixin.py:655
+#: xblock/grade_mixin.py:658
 msgid "The grade for this problem is determined by your Staff Grade."
 msgstr ""
 
-#: xblock/grade_mixin.py:657
+#: xblock/grade_mixin.py:660
 msgid ""
 "The grade for this problem is determined by the median score of your Peer "
 "Assessments."
 msgstr ""
 
-#: xblock/grade_mixin.py:660
+#: xblock/grade_mixin.py:663
 msgid "The grade for this problem is determined by your Self Assessment."
 msgstr ""
 
-#: xblock/grade_mixin.py:666
+#: xblock/grade_mixin.py:669
 #, python-brace-format
 msgid ""
 "You have successfully completed this problem and received a {earned_points}/"
 "{total_points}."
 msgstr ""
 
-#: xblock/grade_mixin.py:674
+#: xblock/grade_mixin.py:677
 msgid ""
 "You have not yet received all necessary peer reviews to determine your final "
 "grade."

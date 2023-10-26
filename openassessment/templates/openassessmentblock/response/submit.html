@@ -1,7 +1,8 @@
+{% load i18n %}
 <div style="background-color: #fff; z-index: 200;">
     <div id="upload-file">
-      <p style="font-size: 16px; color: #0b0b0b;" for="file-upload-input"><strong>Upload Zip File</strong></p>
-      <p style="color: #696969; font-size: 16px; margin: 8px 0 16px;">Compress your project file(s) into a single zip file on your computer. 500 MB limit (uncompressed).</p>
+      <span style="font-size: 16px; color: #0b0b0b;" for="file-upload-input"><strong>{% trans "Upload Zip File" %}</strong></span>
+      <p style="color: #696969; font-size: 16px; margin: 8px 0 16px;">{% trans "Compress your project file(s) into a single zip file on your computer. 500 MB limit." %}</p>
 
       <div style="display: none; max-width: 500px; background-color: #f6f6f6; padding: 32px; border-bottom-right-radius: 64px; margin: 0 0 40px 0;" id="file-upload-preview">
 
@@ -14,44 +15,44 @@
 
         </p>
 
-        <button onclick="removeChosenFile()" style="color: rgb(32, 21, 255); background-color: none; background-image: none; border: none; outline: none; padding: 0; margin: 0;"><u><strong>Delete</strong></u></button>
+        <button onclick="removeChosenFile()" style="color: rgb(32, 21, 255); background-color: none; background-image: none; border: none; outline: none; padding: 0; margin: 0;"><u><strong>{% trans "Delete" %}</strong></u></button>
 
       </div>
 
-      <p onclick="clickFileUploadInput()" style="display: flex; align-items: center; justify-content: center; color: #fff; width: 136px; height: 48px; background-color: rgb(32, 21, 255); border-radius: 4px; cursor: pointer;" id="fake-file-upload-input" ><strong>Choose File</strong></p>
+      <p onclick="clickFileUploadInput()" style="display: flex; align-items: center; justify-content: center; color: #fff; width: 136px; height: 48px; background-color: rgb(32, 21, 255); border-radius: 4px; cursor: pointer;" id="fake-file-upload-input" ><strong>{% trans "Choose File" %}</strong></p>
 
       <input id="file-upload-input" onchange="changeFileHandler(event)" type="file" style="display: block; width: 0; height: 0; overflow: hidden;" />
     </div>
 
     <div id="submission-details" style="margin: 0 0 40px 0;">
-      <label style="font-size: 16px; color: #0b0b0b;"><strong>Submission Details (optional)</strong></label>
-      <p style="color: #696969; font-size: 16px; margin: 8px 0  16px;">Are there any areas you would like your reviewer to pay particular attention to?</p>
+      <label style="font-size: 16px; color: #0b0b0b;"><strong>{% trans "Submission Details (optional)" %}</strong></label>
+      <p style="color: #696969; font-size: 16px; margin: 8px 0  16px;">{% trans "Are there any areas you would like your reviewer to pay particular attention to?" %}</p>
 
       <textarea id="submission-details-textarea" style="min-height: 150px; max-width: 750px; width: 100%; border-radius: 4px; font-weight: 400;"></textarea>
     </div>
 
     <div id="confirm-policy" style="margin: 0 0 40px 0;">
       <label style="font-size: 16px; color: #0b0b0b;"><strong>Funix Honor Code</strong></label>
-      <p style="color: #696969; font-size: 16px; margin: 8px 0  16px;">You must agree to the following before submitting your project.</p>
+      <p style="color: #696969; font-size: 16px; margin: 8px 0  16px;">{% trans "You must agree to the following before submitting your project." %}</p>
 
       <div class="policy-item">
         <input id="checkbox-policy-1" type="checkbox" />
         <p>
-          I affirm that I have read Funix's definitoin of <a href="#">plagiarism</a>, and that this submission is my own work.
+          {% trans "I affirm that I have read Funix's definitoin of " %}<a href="#">{% trans "plagiarism" %}</a>{% trans ", and that this submission is my own work." %}
         </p>
       </div>
 
       <div class="policy-item">
         <input id="checkbox-policy-2" type="checkbox" />
         <p>
-          I have correctly attributed all content obtained from other sources, such as websites, books, forums, blogs, GitHub repos, etc.
+          {% trans "I have correctly attributed all content obtained from other sources, such as websites, books, forums, blogs, GitHub repos, etc." %}
         </p>
       </div>
 
       <div class="policy-item">
         <input id="checkbox-policy-3" type="checkbox" />
         <p>
-          I unserstand that Funix actively checks submissions for plagiarism and that failure to adhere to the <a href="#">Funix Honor Code</a> may result in the cancellation of my enrollment.
+          {% trans "I unserstand that Funix actively checks submissions for plagiarism and that failure to adhere to the " %}<a href="#">Funix Honor Code</a>{% trans " may result in the cancellation of my enrollment." %}
         </p>
       </div>
 
@@ -60,7 +61,7 @@
     <p id="submitting-error-message"></p>
 
     <button id="submit-button" class="disabled resubmit-button step--response__submit" data-xblockid="{{xblock_id}}" text_response="{{text_response}}" file_upload_response="{{file_upload_response}}" >
-      <strong>Submit</strong>
+      <strong>{% trans "Submit" %}</strong>
     </button>
 
     {% if show_staff_area %}
@@ -110,6 +111,7 @@
       width: 20px; 
       margin-top: 2px;
       transform: scale(1.5);
+      flex-shrink: 0;
     }
   
     .policy-item p {
